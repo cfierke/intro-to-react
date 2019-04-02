@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My second React app</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <script type="text/babel">
+      const shoppingListItem = ['Milk', 'Eggs', 'Butter', 'Bread', 'Salt', 'Tea', 'Paper towels'];
+      const shoppingListSort = shoppingListItem.map(sort =>
+        <li>{sort}</li>)
+      class ShoppingList extends React.Component {
+        render() {
+          return (
+            <div>
+              <h1>My Shopping List</h1>
+              <ul>{shoppingListSort}</ul>
+            </div>
+          );
+        }
+      }
+      ReactDOM.render(
+        <ShoppingList />, document.getElementById('app')
+      );
+    </script>
+  </body>
+</html>
